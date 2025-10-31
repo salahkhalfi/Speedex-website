@@ -1329,20 +1329,28 @@ select {
    RESPONSIVE DESIGN
    ======================================== */
 @media (max-width: 1024px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
     .nav-menu {
         position: fixed;
         top: 80px;
         left: 0;
         right: 0;
+        width: 100%;
         flex-direction: column;
         background: var(--white);
         padding: 2rem;
-        gap: 1rem;
+        gap: 1.5rem;
         box-shadow: var(--shadow-lg);
-        transform: translateY(-100%);
+        transform: translateY(-120%);
         opacity: 0;
         visibility: hidden;
         transition: all var(--transition-base);
+        z-index: var(--z-dropdown);
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
     }
 
     .nav-menu.active {
@@ -1353,6 +1361,22 @@ select {
 
     .mobile-toggle {
         display: flex;
+        z-index: calc(var(--z-dropdown) + 1);
+    }
+
+    .nav-actions {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .nav-actions .btn {
+        flex: 1;
+        max-width: 200px;
+    }
+
+    .logo {
+        z-index: calc(var(--z-dropdown) + 1);
     }
 
     .hero-cta {
@@ -1371,6 +1395,33 @@ select {
 }
 
 @media (max-width: 768px) {
+    .header {
+        padding: 0.5rem 0;
+    }
+
+    .navbar {
+        padding: 0.75rem 0;
+    }
+
+    .nav-menu {
+        top: 70px;
+        padding: 1.5rem;
+    }
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-text {
+        font-size: 1.25rem;
+    }
+
+    .nav-actions .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+
     .section {
         padding: var(--spacing-lg) 0;
     }
