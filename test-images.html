@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Images - Speedex 007</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #f0f0f0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #dc2626;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .image-test {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+        }
+        .image-test h3 {
+            color: #374151;
+            margin-bottom: 15px;
+        }
+        .image-test img {
+            max-width: 100%;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+        }
+        .image-info {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .status.ok {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .status.error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ Test des Images - Speedex 007</h1>
+        
+        <div class="image-test">
+            <h3>1. Logo (logo.png) <span class="status" id="status-logo">Chargement...</span></h3>
+            <img src="images/logo.png" alt="Logo Speedex 007" id="img-logo" 
+                 onload="document.getElementById('status-logo').className='status ok'; document.getElementById('status-logo').textContent='✅ OK';"
+                 onerror="document.getElementById('status-logo').className='status error'; document.getElementById('status-logo').textContent='❌ Erreur';">
+            <div class="image-info">
+                <strong>Chemin:</strong> images/logo.png<br>
+                <strong>Format:</strong> PNG<br>
+                <strong>Taille attendue:</strong> 400x400px
+            </div>
+        </div>
+        
+        <div class="image-test">
+            <h3>2. Hero Background (hero-bg.jpg) <span class="status" id="status-hero">Chargement...</span></h3>
+            <img src="images/hero-bg.jpg" alt="Hero Background" id="img-hero" style="max-height: 300px; object-fit: cover;"
+                 onload="document.getElementById('status-hero').className='status ok'; document.getElementById('status-hero').textContent='✅ OK';"
+                 onerror="document.getElementById('status-hero').className='status error'; document.getElementById('status-hero').textContent='❌ Erreur';">
+            <div class="image-info">
+                <strong>Chemin:</strong> images/hero-bg.jpg<br>
+                <strong>Format:</strong> JPEG<br>
+                <strong>Taille attendue:</strong> 1920x1080px
+            </div>
+        </div>
+        
+        <div class="image-test">
+            <h3>3. Facebook Share (facebook-share.jpg) <span class="status" id="status-fb">Chargement...</span></h3>
+            <img src="images/facebook-share.jpg" alt="Facebook Share" id="img-fb" style="max-height: 300px;"
+                 onload="document.getElementById('status-fb').className='status ok'; document.getElementById('status-fb').textContent='✅ OK';"
+                 onerror="document.getElementById('status-fb').className='status error'; document.getElementById('status-fb').textContent='❌ Erreur';">
+            <div class="image-info">
+                <strong>Chemin:</strong> images/facebook-share.jpg<br>
+                <strong>Format:</strong> JPEG<br>
+                <strong>Taille attendue:</strong> 1200x630px
+            </div>
+        </div>
+        
+        <div style="margin-top: 40px; padding: 20px; background: #eff6ff; border-left: 4px solid #3b82f6; border-radius: 4px;">
+            <h3 style="color: #1e40af; margin-top: 0;">📝 Instructions</h3>
+            <p><strong>Si les images ne s'affichent pas :</strong></p>
+            <ol style="color: #374151;">
+                <li>Appuyez sur <kbd>Ctrl + Shift + R</kbd> (Windows/Linux) ou <kbd>Cmd + Shift + R</kbd> (Mac) pour forcer le rechargement</li>
+                <li>Vérifiez la console du navigateur (F12) pour les erreurs</li>
+                <li>Assurez-vous que le serveur est démarré sur le port 3000</li>
+            </ol>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="index.html" style="display: inline-block; padding: 12px 24px; background: #dc2626; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">
+                🏠 Retour au site principal
+            </a>
+        </div>
+    </div>
+</body>
+</html>
