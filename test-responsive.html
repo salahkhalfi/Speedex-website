@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Responsive - Speedex 007</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .test-frame {
+            margin: 20px auto;
+            background: white;
+            border: 2px solid #dc2626;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .frame-header {
+            background: #dc2626;
+            color: white;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+        iframe {
+            border: none;
+            display: block;
+        }
+        h1 {
+            text-align: center;
+            color: #dc2626;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔥 Test Responsive - Speedex 007</h1>
+    
+    <div class="test-frame">
+        <div class="frame-header">📱 Mobile (375px)</div>
+        <iframe src="index.html" width="375" height="667"></iframe>
+    </div>
+    
+    <div class="test-frame">
+        <div class="frame-header">📱 Tablet (768px)</div>
+        <iframe src="index.html" width="768" height="1024"></iframe>
+    </div>
+    
+    <div class="test-frame">
+        <div class="frame-header">💻 Desktop (1024px)</div>
+        <iframe src="index.html" width="1024" height="768"></iframe>
+    </div>
+</body>
+</html>
