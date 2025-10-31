@@ -1,0 +1,106 @@
+═══════════════════════════════════════════════════════════════
+  🔥 SPEEDEX 007 - GUIDE DE DÉPLOIEMENT COMPLET
+═══════════════════════════════════════════════════════════════
+
+📁 DOSSIER À DÉPLOYER
+----------------------
+Utilisez UNIQUEMENT le dossier: deploy/
+
+Ce dossier contient tout ce dont vous avez besoin:
+✅ index.html (français)
+✅ index-en.html (anglais) 
+✅ css/styles.css (styles complets)
+✅ js/main.js (JavaScript vanilla)
+✅ images/ (logo, hero, share)
+✅ README.txt (instructions)
+
+🚀 MÉTHODES DE DÉPLOIEMENT
+---------------------------
+
+1️⃣ FTP / CPANEL (RECOMMANDÉ POUR DÉBUTANTS)
+   a) Connectez-vous à votre hébergement via FTP
+   b) Naviguez vers public_html/ ou www/
+   c) Téléversez TOUT le contenu de deploy/
+   d) Attendez la fin du transfert
+   e) Visitez: https://extincteurspeedex.ca/
+
+2️⃣ GITHUB PAGES (GRATUIT)
+   a) Créez un compte GitHub si nécessaire
+   b) Créez un nouveau repository "speedex007"
+   c) Uploadez les fichiers du dossier deploy/
+   d) Settings → Pages → Source: main branch
+   e) Votre site sera sur: username.github.io/speedex007
+
+3️⃣ NETLIFY (RECOMMANDÉ - FACILE & GRATUIT)
+   a) Allez sur netlify.com
+   b) Glissez-déposez le dossier deploy/
+   c) Netlify déploie automatiquement
+   d) Configurez votre domaine dans Settings
+   e) Done! Votre site est en ligne
+
+4️⃣ VERCEL (ALTERNATIF)
+   a) Allez sur vercel.com
+   b) Import Project → Upload dossier deploy/
+   c) Framework: None
+   d) Deploy!
+
+5️⃣ CLOUDFLARE PAGES (PERFORMANCE MAXIMALE)
+   a) Créez un compte Cloudflare
+   b) Pages → Create a project
+   c) Upload assets → dossier deploy/
+   d) Build settings: None (static)
+   e) Deploy!
+
+🌐 CONFIGURATION DOMAINE
+-------------------------
+Après déploiement, pointez votre domaine:
+
+Pour extincteurspeedex.ca:
+- Type A record → IP de votre hébergeur
+- Ou CNAME → netlify/vercel/cloudflare
+- Activez HTTPS (Let's Encrypt gratuit)
+
+📝 URLS FINALES
+---------------
+Français: https://extincteurspeedex.ca/
+Anglais:  https://extincteurspeedex.ca/index-en.html
+
+✅ CHECKLIST POST-DÉPLOIEMENT
+-----------------------------
+☐ Site accessible en HTTP/HTTPS
+☐ Version française fonctionne
+☐ Version anglaise fonctionne
+☐ Sélecteur de langue fonctionne
+☐ Formulaire de contact fonctionne
+☐ Tous les liens fonctionnent
+☐ Images se chargent correctement
+☐ Navigation mobile fonctionne
+☐ Bouton téléphone cliquable
+☐ Google Search Console configuré
+☐ Analytics installé (optionnel)
+
+🔧 MAINTENANCE
+--------------
+Pour modifier le contenu:
+1. Éditez index.html ou index-en.html
+2. Téléversez via FTP
+3. Ou poussez sur Git (Netlify/Vercel redéploient auto)
+
+⚠️ IMPORTANT
+------------
+- NE PAS modifier les fichiers CSS/JS sans connaissances
+- Toujours faire une sauvegarde avant modification
+- Testez sur un sous-domaine avant production
+- Le dossier deploy/ est STANDALONE (autonome)
+- Aucune dépendance, aucun build requis
+
+📞 SUPPORT
+----------
+Pour questions techniques:
+- Consultez deploy/README.txt
+- Vérifiez la documentation de votre hébergeur
+- Support Netlify/Vercel très réactif
+
+═══════════════════════════════════════════════════════════════
+  Site optimisé pour: SEO, Performance, Mobile, Accessibilité
+═══════════════════════════════════════════════════════════════
