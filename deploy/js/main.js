@@ -120,39 +120,50 @@
     // ========================================
     const initCounters = () => {
         const counters = document.querySelectorAll('.stat-number');
-        let animated = false;
+        const animatedCounters = new Set(); // Track which counters have been animated
 
-        const animateCounters = () => {
-            const triggerBottom = window.innerHeight * 0.8;
+        const animateCounter = (counter) => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            const duration = 2000; // 2 seconds
+            const increment = target / (duration / 16); // 60 FPS
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    counter.textContent = Math.floor(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target;
+                }
+            };
+
+            updateCounter();
+        };
+
+        const checkCounters = () => {
+            const triggerBottom = window.innerHeight * 0.85;
 
             counters.forEach(counter => {
+                // Skip if already animated
+                if (animatedCounters.has(counter)) return;
+
                 const rect = counter.getBoundingClientRect();
                 const top = rect.top;
 
-                if (top < triggerBottom && !animated) {
-                    const target = parseInt(counter.getAttribute('data-target'));
-                    const duration = 2000;
-                    const increment = target / (duration / 16);
-                    let current = 0;
-
-                    const updateCounter = () => {
-                        current += increment;
-                        if (current < target) {
-                            counter.textContent = Math.floor(current);
-                            requestAnimationFrame(updateCounter);
-                        } else {
-                            counter.textContent = target;
-                        }
-                    };
-
-                    updateCounter();
-                    animated = true;
+                // Trigger animation when counter is visible
+                if (top < triggerBottom && top > 0) {
+                    animateCounter(counter);
+                    animatedCounters.add(counter);
                 }
             });
         };
 
-        window.addEventListener('scroll', animateCounters);
-        animateCounters(); // Initial check
+        // Check on scroll
+        window.addEventListener('scroll', checkCounters);
+        
+        // Check immediately on page load (in case counters are already visible)
+        setTimeout(checkCounters, 100);
     };
 
     // ========================================
