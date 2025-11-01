@@ -2,8 +2,9 @@ module.exports = {
   apps: [
     {
       name: 'speedex',
-      script: 'npx',
-      args: 'wrangler pages dev dist --ip 0.0.0.0 --port 3000',
+      script: 'python3',
+      args: '-m http.server 3000 --bind 0.0.0.0',
+      cwd: '/home/user/webapp/speedex',
       env: {
         NODE_ENV: 'development',
         PORT: 3000
