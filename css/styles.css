@@ -550,9 +550,12 @@ section:not(.hero) {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: 
+    background-image: 
         linear-gradient(135deg, rgba(10, 36, 99, 0.50) 0%, rgba(7, 27, 69, 0.60) 100%),
-        url('../images/hero-bg.jpg') center/cover no-repeat;
+        url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
     padding-top: 80px;
     padding-bottom: 60px;
