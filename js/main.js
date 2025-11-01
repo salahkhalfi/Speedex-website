@@ -24,7 +24,7 @@
                 const target = document.querySelector(href);
                 if (target) {
                     e.preventDefault();
-                    const headerOffset = 120;
+                    const headerOffset = 180;
                     const elementPosition = target.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
