@@ -1909,7 +1909,7 @@ section:not(.hero) {
    ======================================== */
 @media (max-width: 900px) {
     .navbar {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
     }
 
     .nav-menu {
@@ -1944,14 +1944,16 @@ section:not(.hero) {
     }
 
     .nav-actions {
-        order: 3;
-        width: 100%;
-        justify-content: space-between;
+        order: 2;
+        width: auto;
+        justify-content: flex-end;
+        gap: 0.5rem;
     }
 
     .nav-actions .btn {
-        flex: 1;
-        max-width: 200px;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+        white-space: nowrap;
     }
 
     .logo {
