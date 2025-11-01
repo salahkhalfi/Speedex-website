@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test Simple Background</title>
+    <style>
+        body { margin: 0; padding: 0; }
+        
+        .test1 {
+            width: 100%;
+            height: 400px;
+            background-image: url('/images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            border: 5px solid red;
+            margin-bottom: 20px;
+        }
+        
+        .test2 {
+            width: 100%;
+            height: 400px;
+            background-image: 
+                linear-gradient(135deg, rgba(10, 36, 99, 0.50) 0%, rgba(7, 27, 69, 0.60) 100%),
+                url('/images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            border: 5px solid blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        h1 {
+            color: white;
+            font-size: 3rem;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body>
+    <h2 style="padding: 20px;">Test 1: Image sans overlay (bordure rouge)</h2>
+    <div class="test1"></div>
+    
+    <h2 style="padding: 20px;">Test 2: Image avec overlay bleu (bordure bleue)</h2>
+    <div class="test2">
+        <h1>SPEEDEX 007</h1>
+    </div>
+    
+    <div style="padding: 20px;">
+        <h2>Image directe:</h2>
+        <img src="/images/hero-bg.jpg" style="max-width: 100%; height: auto;">
+    </div>
+</body>
+</html>

@@ -561,7 +561,7 @@ section:not(.hero) {
     padding-bottom: 60px;
 }
 
-/* Subtle Professional Pattern */
+/* Subtle Professional Pattern - DISABLED to show background image */
 .hero::before {
     content: '';
     position: absolute;
@@ -569,21 +569,7 @@ section:not(.hero) {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 50px,
-            rgba(21, 101, 192, 0.03) 50px,
-            rgba(21, 101, 192, 0.03) 51px
-        ),
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 50px,
-            rgba(211, 47, 47, 0.02) 50px,
-            rgba(211, 47, 47, 0.02) 51px
-        );
+    background: transparent;
     z-index: 0;
     pointer-events: none;
 }
@@ -602,7 +588,7 @@ section:not(.hero) {
     pointer-events: none;
 }
 
-/* Animated Gradient Mesh */
+/* Animated Gradient Mesh - DISABLED to show background image */
 .hero::after {
     content: '';
     position: absolute;
@@ -610,10 +596,8 @@ section:not(.hero) {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(21, 101, 192, 0.08) 0%, transparent 25%),
-        radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.06) 0%, transparent 25%);
-    animation: meshRotate 30s linear infinite;
+    background: transparent;
+    animation: none;
     z-index: 0;
 }
 
