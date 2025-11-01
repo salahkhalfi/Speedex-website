@@ -738,6 +738,59 @@ section:not(.hero) {
     margin-bottom: var(--spacing-lg);
 }
 
+/* NOUVEAUX BOUTONS HERO - Style Simple et Direct */
+.hero-cta-new {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero-btn-contact,
+.hero-btn-phone {
+    display: inline-block;
+    padding: 18px 40px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 3px solid;
+    text-align: center;
+    min-width: 280px;
+    cursor: pointer;
+}
+
+.hero-btn-contact {
+    background: #c91818;
+    color: white;
+    border-color: #c91818;
+    box-shadow: 0 4px 12px rgba(201, 24, 24, 0.3);
+}
+
+.hero-btn-contact:hover {
+    background: #a01313;
+    border-color: #a01313;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(201, 24, 24, 0.4);
+}
+
+.hero-btn-phone {
+    background: white;
+    color: #c91818;
+    border-color: #c91818;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hero-btn-phone:hover {
+    background: #c91818;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(201, 24, 24, 0.4);
+}
+
 .hero-stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -1744,8 +1797,15 @@ section:not(.hero) {
         z-index: calc(var(--z-dropdown) + 1);
     }
 
-    .hero-cta {
+    .hero-cta,
+    .hero-cta-new {
         flex-direction: column;
+    }
+    
+    .hero-btn-contact,
+    .hero-btn-phone {
+        min-width: 100%;
+        max-width: 400px;
     }
 
     .about-grid,
@@ -1856,6 +1916,7 @@ section:not(.hero) {
     .mobile-toggle,
     .back-to-top,
     .hero-cta,
+    .hero-cta-new,
     .contact-form-container,
     .emergency-banner {
         display: none;
