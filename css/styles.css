@@ -972,24 +972,25 @@ section:not(.hero) {
     transform: translate(-50%, -50%) scale(1.2);
 }
 
-/* Enhanced text contrast on hover - Force darker colors */
+/* Enhanced text contrast on hover - Lighter colors for better visibility */
 .service-card:hover h3 {
-    color: #0a0f1f !important;
-    font-weight: 800;
+    color: #1565C0 !important;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .service-card:hover p {
-    color: #1a202c !important;
-    font-weight: 600;
-}
-
-.service-card:hover .service-features li {
-    color: #1a202c !important;
+    color: #4a5568 !important;
     font-weight: 500;
 }
 
+.service-card:hover .service-features li {
+    color: #4a5568 !important;
+    font-weight: 400;
+}
+
 .service-card:hover .service-link {
-    color: #0D47A1 !important;
+    color: #1565C0 !important;
     font-weight: 700;
 }
 
