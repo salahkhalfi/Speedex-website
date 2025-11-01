@@ -100,7 +100,7 @@
 
             sections.forEach(section => {
                 const sectionHeight = section.offsetHeight;
-                const sectionTop = section.offsetTop - 100;
+                const sectionTop = section.offsetTop - 120;
                 const sectionId = section.getAttribute('id');
                 const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
 

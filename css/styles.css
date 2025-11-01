@@ -166,6 +166,11 @@ select {
 
 .section {
     padding: var(--spacing-xl) 0;
+    scroll-margin-top: 100px;
+}
+
+section[id] {
+    scroll-margin-top: 100px;
 }
 
 .section-header {
