@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostic - Speedex</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        
+        .timestamp {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .test-section {
+            margin: 30px 0;
+            padding: 25px;
+            background: #f7fafc;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+        
+        h2 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .button-test {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .btn-outline {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .btn-outline:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin: 10px 5px;
+        }
+        
+        .status-ok {
+            background: #48bb78;
+            color: white;
+        }
+        
+        .status-error {
+            background: #f56565;
+            color: white;
+        }
+        
+        .info-box {
+            background: #edf2f7;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        
+        .highlight {
+            background: #ffd700;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .instructions {
+            background: #fff5e6;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .instructions h3 {
+            color: #d97706;
+            margin-bottom: 15px;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+            line-height: 2;
+        }
+        
+        .test-result {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border: 2px dashed #cbd5e0;
+        }
+        
+        .fas {
+            width: 20px;
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Diagnostic Speedex</h1>
+        <div class="timestamp">
+            Version: 3.5 | Généré: <span id="current-time"></span>
+        </div>
+        
+        <div class="test-section">
+            <h2>📧 Test des Boutons Hero</h2>
+            <p style="margin-bottom: 20px; color: #4a5568;">
+                Cliquez sur ces boutons pour vérifier qu'ils fonctionnent correctement :
+            </p>
+            
+            <div class="button-test">
+                <a href="mailto:info@extincteurspeedex.ca?subject=Demande%20de%20soumission&body=Bonjour,%0D%0A%0D%0AJe%20souhaite%20obtenir%20une%20soumission%20pour%20:%0D%0A%0D%0ANom%20:%20%0D%0AEntreprise%20:%20%0D%0ATéléphone%20:%20%0D%0AType%20de%20service%20:%20%0D%0A%0D%0AMerci!" class="btn btn-primary" onclick="testEmailLink()">
+                    <i class="fas fa-envelope"></i> Demander une soumission
+                </a>
+                
+                <a href="tel:+15146061100" class="btn btn-outline" onclick="testPhoneLink()">
+                    <i class="fas fa-phone-alt"></i> Appel d'urgence
+                </a>
+            </div>
+            
+            <div class="test-result">
+                <strong>Résultat attendu :</strong>
+                <ul style="margin: 10px 0 0 20px; line-height: 2;">
+                    <li><span class="status status-ok">✓</span> Le bouton "Demander une soumission" doit ouvrir votre client email</li>
+                    <li><span class="status status-ok">✓</span> Le bouton "Appel d'urgence" doit ouvrir votre application téléphone</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>🔗 Vérification Technique</h2>
+            
+            <div class="info-box">
+                <strong>Lien Email :</strong><br>
+                <span class="highlight">mailto:info@extincteurspeedex.ca</span><br>
+                Sujet: Demande de soumission<br>
+                Corps: Formulaire pré-rempli
+            </div>
+            
+            <div class="info-box">
+                <strong>Lien Téléphone :</strong><br>
+                <span class="highlight">tel:+15146061100</span><br>
+                Numéro: (514) 606-1100
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>⚠️ Si les boutons ne fonctionnent pas sur la page principale</h3>
+            <ol>
+                <li><strong>Videz COMPLÈTEMENT le cache de votre navigateur</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>Chrome: <code>Ctrl+Shift+Delete</code> → Cocher "Images et fichiers en cache" → Effacer</li>
+                        <li>Firefox: <code>Ctrl+Shift+Delete</code> → Choisir "Tout" → Effacer maintenant</li>
+                        <li>Safari: Préférences → Avancé → Vider les caches</li>
+                    </ul>
+                </li>
+                <li><strong>Forcez le rechargement avec</strong>: <code>Ctrl+Shift+R</code> (Windows) ou <code>Cmd+Shift+R</code> (Mac)</li>
+                <li><strong>Ouvrez en mode navigation privée / incognito</strong> pour tester sans cache</li>
+                <li><strong>Essayez un autre navigateur</strong> pour vérifier que ce n'est pas un problème de cache persistant</li>
+            </ol>
+        </div>
+        
+        <div class="test-section">
+            <h2>📊 Informations de Cache</h2>
+            <div class="info-box">
+                <strong>Nom du fichier:</strong> index.html<br>
+                <strong>Version CSS:</strong> styles.css?v=3.5&t=1761985598526047665<br>
+                <strong>Version JS:</strong> main.js?v=3.5&t=1761985598526047665<br>
+                <strong>Timestamp unique:</strong> 1761985598526047665 (nanoseconde)<br>
+                <strong>Serveur:</strong> Python HTTP/0.6
+            </div>
+        </div>
+        
+        <div class="test-section" style="background: #e6fffa; border-left-color: #38b2ac;">
+            <h2>✅ Test Réussi ?</h2>
+            <p style="line-height: 1.8; color: #234e52;">
+                Si les boutons sur <strong>cette page de diagnostic</strong> fonctionnent correctement, 
+                cela signifie que le problème sur la page principale est dû au <strong>cache de votre navigateur</strong>.
+                <br><br>
+                Le serveur envoie bien les bonnes données, mais votre navigateur utilise 
+                encore l'ancienne version mise en cache.
+            </p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="/" class="btn btn-primary" style="font-size: 1.2rem; padding: 20px 40px;">
+                <i class="fas fa-home"></i> Retourner à la page principale
+            </a>
+        </div>
+    </div>
+    
+    <script>
+        // Afficher l'heure actuelle
+        document.getElementById('current-time').textContent = new Date().toLocaleString('fr-CA', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        });
+        
+        function testEmailLink() {
+            console.log('✓ Lien email cliqué - devrait ouvrir le client email');
+            return true;
+        }
+        
+        function testPhoneLink() {
+            console.log('✓ Lien téléphone cliqué - devrait ouvrir l\'application téléphone');
+            return true;
+        }
+    </script>
+</body>
+</html>
