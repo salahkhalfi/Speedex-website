@@ -173,12 +173,17 @@ section[id] {
     scroll-margin-top: 200px;
 }
 
-/* Ensure sections are below header */
-section {
+/* Hero section should start at top (no scroll margin) */
+.hero {
+    scroll-margin-top: 0 !important;
+}
+
+/* Ensure sections are below header - but not hero */
+section:not(.hero) {
     position: relative;
 }
 
-section::before {
+section:not(.hero)::before {
     content: '';
     display: block;
     height: 100px;
@@ -875,22 +880,23 @@ section::before {
     will-change: transform;
 }
 
-/* Animated Gradient Border */
+/* Subtle Professional Border Effect */
 .service-card::before {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: var(--gradient-fire);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
     border-radius: var(--radius-xl);
     opacity: 0;
-    z-index: -1;
-    transition: opacity var(--transition-base);
+    transition: all var(--transition-base);
+    background: linear-gradient(var(--white), var(--white)) padding-box,
+                linear-gradient(135deg, var(--primary), var(--secondary)) border-box;
 }
 
-/* Glow Effect on Hover */
+/* Subtle Glow Effect on Hover */
 .service-card::after {
     content: '';
     position: absolute;
@@ -898,33 +904,27 @@ section::before {
     left: 50%;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(220, 38, 38, 0.08) 0%, transparent 70%);
     transform: translate(-50%, -50%) scale(0);
     transition: transform var(--transition-slow);
     border-radius: var(--radius-xl);
+    z-index: -1;
 }
 
 .service-card:hover {
-    transform: translateY(-16px) scale(1.03) rotateX(5deg) translateZ(20px);
+    transform: translateY(-8px) scale(1.02);
     box-shadow: 
-        0 30px 60px rgba(220, 38, 38, 0.25),
-        0 0 0 1px rgba(220, 38, 38, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9),
-        0 0 80px rgba(220, 38, 38, 0.15);
+        0 20px 40px rgba(220, 38, 38, 0.15),
+        0 0 0 1px rgba(220, 38, 38, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .service-card:hover::before {
     opacity: 1;
-    animation: rotateBorder 3s linear infinite;
 }
 
 .service-card:hover::after {
-    transform: translate(-50%, -50%) scale(1);
-}
-
-@keyframes rotateBorder {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    transform: translate(-50%, -50%) scale(1.2);
 }
 
 /* Premium Featured Card */
