@@ -24,7 +24,7 @@
                 const target = document.querySelector(href);
                 if (target) {
                     e.preventDefault();
-                    const headerOffset = 80;
+                    const headerOffset = 100;
                     const elementPosition = target.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -568,21 +568,10 @@
         });
     };
     
-    // Text Reveal Animation
+    // Text Reveal Animation - DISABLED to preserve text formatting
     const initTextReveal = () => {
-        const titles = document.querySelectorAll('.hero-title, .section-title');
-        
-        titles.forEach(title => {
-            const words = title.textContent.split(' ');
-            title.textContent = '';
-            
-            words.forEach((word, index) => {
-                const span = document.createElement('span');
-                span.className = 'text-reveal';
-                span.innerHTML = `<span class="text-reveal-inner" style="animation-delay: ${index * 0.1}s">${word} </span>`;
-                title.appendChild(span);
-            });
-        });
+        // Text reveal disabled to prevent spacing issues between words
+        return;
     };
     
     // Stagger Animation for Service Cards

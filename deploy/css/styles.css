@@ -1838,7 +1838,8 @@ select {
 
 /* Hero Slogan */
 .hero-slogan {
-    margin-top: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 0;
     padding: 1.5rem 2rem;
     background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(220, 38, 38, 0.05) 100%);
     border-left: 4px solid var(--primary);
