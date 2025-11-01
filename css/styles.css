@@ -7,28 +7,28 @@
    PREMIUM CSS VARIABLES & ROOT STYLES
    ======================================== */
 :root {
-    /* Professional Security Color Palette - Inspired by Industry Leaders - WCAG AAA */
-    --primary: #003366;
-    --primary-dark: #001a33;
-    --primary-light: #004d99;
-    --primary-glow: rgba(0, 51, 102, 0.4);
+    /* Premium Modern Color Palette - Professional & Attractive - WCAG AAA */
+    --primary: #0A2463;
+    --primary-dark: #071940;
+    --primary-light: #1E88E5;
+    --primary-glow: rgba(30, 136, 229, 0.4);
     
-    /* Professional Gradient Collection - High Contrast */
-    --gradient-primary: linear-gradient(135deg, #003366 0%, #001a33 100%);
-    --gradient-safety: linear-gradient(135deg, #C8102E 0%, #9e0c24 100%);
-    --gradient-alert: linear-gradient(135deg, #FFC107 0%, #FFB300 100%);
-    --gradient-dark: linear-gradient(135deg, #2D3E50 0%, #1a252f 100%);
-    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    /* Premium Gradient Collection */
+    --gradient-primary: linear-gradient(135deg, #0A2463 0%, #1E88E5 100%);
+    --gradient-accent: linear-gradient(135deg, #FB8B24 0%, #FF6B35 100%);
+    --gradient-dark: linear-gradient(135deg, #071940 0%, #0A2463 100%);
+    --gradient-light: linear-gradient(135deg, #FAFAFA 0%, #FFFFFF 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
     
-    /* Secondary Colors - Safety Alert Orange/Yellow */
-    --secondary: #FFC107;
-    --secondary-dark: #FFB300;
-    --secondary-light: #FFCA28;
+    /* Secondary Colors - Modern Coral/Orange */
+    --secondary: #FB8B24;
+    --secondary-dark: #E8590C;
+    --secondary-light: #FF9F45;
     
-    /* Safety Red - Used sparingly for emergency/urgency */
-    --safety-red: #C8102E;
-    --safety-red-dark: #9e0c24;
-    --safety-red-light: #E31E3A;
+    /* Accent Blue */
+    --accent-blue: #1E88E5;
+    --accent-blue-dark: #1565C0;
+    --accent-blue-light: #42A5F5;
     
     /* Premium Neutral Palette - Enhanced Contrast */
     --dark: #0a0f1f;
@@ -249,7 +249,7 @@ section:not(.hero) {
     left: 0;
     top: 0;
     z-index: -1;
-    background: var(--gradient-fire);
+    background: var(--gradient-accent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -312,10 +312,10 @@ section:not(.hero) {
 }
 
 .btn-primary {
-    background: var(--gradient-fire);
+    background: var(--gradient-accent);
     color: var(--white);
     box-shadow: 
-        0 8px 24px rgba(0, 51, 102, 0.3),
+        0 8px 24px rgba(10, 36, 99, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -323,7 +323,7 @@ section:not(.hero) {
 .btn-primary:hover {
     transform: translateY(-3px) scale(1.02);
     box-shadow: 
-        0 12px 32px rgba(0, 51, 102, 0.4),
+        0 12px 32px rgba(10, 36, 99, 0.4),
         var(--glow-primary),
         inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
@@ -353,11 +353,11 @@ section:not(.hero) {
 }
 
 .btn-emergency {
-    background: var(--gradient-fire);
+    background: var(--gradient-accent);
     color: var(--white);
     animation: emergencyPulse 2s ease-in-out infinite;
     box-shadow: 
-        0 8px 24px rgba(0, 51, 102, 0.4),
+        0 8px 24px rgba(10, 36, 99, 0.4),
         var(--glow-primary);
     font-weight: 700;
 }
@@ -379,13 +379,13 @@ section:not(.hero) {
 @keyframes emergencyPulse {
     0%, 100% {
         box-shadow: 
-            0 8px 24px rgba(0, 51, 102, 0.4),
-            0 0 0 0 rgba(0, 51, 102, 0.7);
+            0 8px 24px rgba(10, 36, 99, 0.4),
+            0 0 0 0 rgba(10, 36, 99, 0.7);
     }
     50% {
         box-shadow: 
-            0 12px 32px rgba(0, 51, 102, 0.6),
-            0 0 0 20px rgba(0, 51, 102, 0);
+            0 12px 32px rgba(10, 36, 99, 0.6),
+            0 0 0 20px rgba(10, 36, 99, 0);
     }
 }
 
@@ -548,12 +548,12 @@ section:not(.hero) {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #001a33 0%, #003366 50%, #002147 100%);
+    background: linear-gradient(135deg, #071940 0%, #0A2463 50%, #1E88E5 100%);
     overflow: hidden;
     padding-top: 80px;
 }
 
-/* Professional Grid Pattern */
+/* Modern Pattern */
 .hero::before {
     content: '';
     position: absolute;
@@ -566,21 +566,21 @@ section:not(.hero) {
             90deg,
             transparent,
             transparent 50px,
-            rgba(255, 193, 7, 0.02) 50px,
-            rgba(255, 193, 7, 0.02) 51px
+            rgba(30, 136, 229, 0.03) 50px,
+            rgba(30, 136, 229, 0.03) 51px
         ),
         repeating-linear-gradient(
             0deg,
             transparent,
             transparent 50px,
-            rgba(255, 255, 255, 0.02) 50px,
-            rgba(255, 255, 255, 0.02) 51px
+            rgba(251, 139, 36, 0.02) 50px,
+            rgba(251, 139, 36, 0.02) 51px
         );
     z-index: 0;
     pointer-events: none;
 }
 
-/* Subtle Safety Accent - NO BLOCKING */
+/* Elegant Glow - NO BLOCKING */
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -588,8 +588,8 @@ section:not(.hero) {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(ellipse at 80% 20%, rgba(255, 193, 7, 0.06) 0%, transparent 50%),
-        radial-gradient(ellipse at 20% 80%, rgba(0, 51, 102, 0.08) 0%, transparent 50%);
+        radial-gradient(ellipse at 80% 20%, rgba(251, 139, 36, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 80%, rgba(30, 136, 229, 0.10) 0%, transparent 50%);
     z-index: 0;
     pointer-events: none;
 }
@@ -603,7 +603,7 @@ section:not(.hero) {
     width: 200%;
     height: 200%;
     background: 
-        radial-gradient(circle at 20% 50%, rgba(0, 51, 102, 0.08) 0%, transparent 25%),
+        radial-gradient(circle at 20% 50%, rgba(10, 36, 99, 0.08) 0%, transparent 25%),
         radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.06) 0%, transparent 25%);
     animation: meshRotate 30s linear infinite;
     z-index: 0;
@@ -662,9 +662,9 @@ section:not(.hero) {
 .hero-badge:hover {
     transform: translateY(-2px) scale(1.05);
     box-shadow: 
-        0 12px 48px rgba(0, 51, 102, 0.3),
+        0 12px 48px rgba(10, 36, 99, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    border-color: rgba(0, 51, 102, 0.5);
+    border-color: rgba(10, 36, 99, 0.5);
 }
 
 .hero-badge i {
@@ -693,8 +693,8 @@ section:not(.hero) {
     letter-spacing: var(--letter-spacing-tight);
     text-shadow: 
         0 2px 10px rgba(0, 0, 0, 0.3),
-        0 0 60px rgba(0, 51, 102, 0.5),
-        0 0 100px rgba(0, 51, 102, 0.3);
+        0 0 60px rgba(10, 36, 99, 0.5),
+        0 0 100px rgba(10, 36, 99, 0.3);
     animation: titleGlow 4s ease-in-out infinite;
 }
 
@@ -702,14 +702,14 @@ section:not(.hero) {
     0%, 100% { 
         text-shadow: 
             0 2px 10px rgba(0, 0, 0, 0.3),
-            0 0 60px rgba(0, 51, 102, 0.5),
-            0 0 100px rgba(0, 51, 102, 0.3);
+            0 0 60px rgba(10, 36, 99, 0.5),
+            0 0 100px rgba(10, 36, 99, 0.3);
     }
     50% { 
         text-shadow: 
             0 2px 10px rgba(0, 0, 0, 0.3),
-            0 0 80px rgba(0, 51, 102, 0.7),
-            0 0 120px rgba(0, 51, 102, 0.5);
+            0 0 80px rgba(10, 36, 99, 0.7),
+            0 0 120px rgba(10, 36, 99, 0.5);
     }
 }
 
@@ -755,35 +755,37 @@ section:not(.hero) {
 }
 
 .hero-btn-contact {
-    background: #FFC107;
-    color: #001a33;
-    border-color: #FFC107;
-    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
-    font-weight: 800;
+    background: linear-gradient(135deg, #FB8B24 0%, #FF6B35 100%);
+    color: #FFFFFF;
+    border-color: #FB8B24;
+    box-shadow: 0 4px 16px rgba(251, 139, 36, 0.5);
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .hero-btn-contact:hover {
-    background: #FFCA28;
-    color: #000000;
-    border-color: #FFCA28;
+    background: linear-gradient(135deg, #FF9F45 0%, #FB8B24 100%);
+    color: #FFFFFF;
+    border-color: #FF9F45;
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(255, 193, 7, 0.6);
+    box-shadow: 0 8px 28px rgba(251, 139, 36, 0.7);
 }
 
 .hero-btn-phone {
     background: #FFFFFF;
-    color: #003366;
-    border-color: #FFC107;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    font-weight: 800;
+    color: #0A2463;
+    border-color: #FB8B24;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    font-weight: 700;
 }
 
 .hero-btn-phone:hover {
-    background: #FFC107;
-    color: #001a33;
-    border-color: #FFCA28;
+    background: #1E88E5;
+    color: #FFFFFF;
+    border-color: #1E88E5;
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(255, 193, 7, 0.5);
+    box-shadow: 0 8px 28px rgba(30, 136, 229, 0.6);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .hero-stats {
@@ -917,7 +919,7 @@ section:not(.hero) {
     transition: all var(--transition-slow);
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(0, 51, 102, 0.12);
+    border: 1px solid rgba(10, 36, 99, 0.12);
     transform-style: preserve-3d;
     perspective: 1000px;
     will-change: transform;
@@ -947,7 +949,7 @@ section:not(.hero) {
     left: 50%;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(0, 51, 102, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(10, 36, 99, 0.08) 0%, transparent 70%);
     transform: translate(-50%, -50%) scale(0);
     transition: transform var(--transition-slow);
     border-radius: var(--radius-xl);
@@ -958,8 +960,8 @@ section:not(.hero) {
     transform: translateY(-8px) scale(1.02);
     background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.98) 100%);
     box-shadow: 
-        0 24px 48px rgba(0, 51, 102, 0.18),
-        0 0 0 2px rgba(0, 51, 102, 0.15),
+        0 24px 48px rgba(10, 36, 99, 0.18),
+        0 0 0 2px rgba(10, 36, 99, 0.15),
         inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
@@ -986,8 +988,8 @@ section:not(.hero) {
     color: var(--white);
     transform: scale(1.05);
     box-shadow: 
-        0 24px 48px rgba(0, 51, 102, 0.35),
-        0 0 40px rgba(0, 51, 102, 0.2),
+        0 24px 48px rgba(10, 36, 99, 0.35),
+        0 0 40px rgba(10, 36, 99, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.25);
     border: 1px solid rgba(255, 255, 255, 0.25);
 }
@@ -1001,8 +1003,8 @@ section:not(.hero) {
     transform: scale(1.08) translateY(-12px);
     background: linear-gradient(135deg, #d91d1d 0%, #9a0000 100%);
     box-shadow: 
-        0 32px 64px rgba(0, 51, 102, 0.45),
-        0 0 60px rgba(0, 51, 102, 0.3),
+        0 32px 64px rgba(10, 36, 99, 0.45),
+        0 0 60px rgba(10, 36, 99, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
@@ -1034,13 +1036,13 @@ section:not(.hero) {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--gradient-fire);
+    background: var(--gradient-accent);
     color: var(--white);
     font-size: 2.25rem;
     border-radius: var(--radius-xl);
     margin-bottom: 1.5rem;
     box-shadow: 
-        0 12px 24px rgba(0, 51, 102, 0.3),
+        0 12px 24px rgba(10, 36, 99, 0.3),
         var(--glow-primary),
         inset 0 2px 0 rgba(255, 255, 255, 0.2);
     position: relative;
@@ -1051,7 +1053,7 @@ section:not(.hero) {
     content: '';
     position: absolute;
     inset: -3px;
-    background: var(--gradient-fire);
+    background: var(--gradient-accent);
     border-radius: var(--radius-xl);
     opacity: 0;
     filter: blur(10px);
@@ -1061,7 +1063,7 @@ section:not(.hero) {
 .service-card:hover .service-icon {
     transform: scale(1.1) rotate(5deg);
     box-shadow: 
-        0 16px 32px rgba(0, 51, 102, 0.4),
+        0 16px 32px rgba(10, 36, 99, 0.4),
         var(--glow-primary);
 }
 
@@ -1553,7 +1555,7 @@ section:not(.hero) {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+    box-shadow: 0 0 0 3px rgba(10, 36, 99, 0.1);
 }
 
 .form-message {
@@ -1572,7 +1574,7 @@ section:not(.hero) {
 }
 
 .form-message.error {
-    background: rgba(0, 51, 102, 0.1);
+    background: rgba(10, 36, 99, 0.1);
     color: var(--danger);
     border: 2px solid var(--danger);
     display: block;
@@ -1626,7 +1628,7 @@ section:not(.hero) {
 
 .cert-badge {
     padding: 0.5rem 1rem;
-    background: rgba(0, 51, 102, 0.1);
+    background: rgba(10, 36, 99, 0.1);
     color: var(--primary);
     font-size: 0.75rem;
     font-weight: 700;
@@ -1932,7 +1934,7 @@ section:not(.hero) {
     margin-top: 3rem;
     margin-bottom: 0;
     padding: 1.5rem 2rem;
-    background: linear-gradient(135deg, rgba(0, 51, 102, 0.1) 0%, rgba(0, 51, 102, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(10, 36, 99, 0.1) 0%, rgba(10, 36, 99, 0.05) 100%);
     border-left: 4px solid var(--primary);
     border-radius: var(--radius-lg);
     display: inline-flex;
@@ -2003,7 +2005,7 @@ section:not(.hero) {
 .area-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--primary-light) 0%, rgba(0, 51, 102, 0.1) 100%);
+    background: linear-gradient(135deg, var(--primary-light) 0%, rgba(10, 36, 99, 0.1) 100%);
     border-radius: var(--radius-full);
     display: flex;
     align-items: center;
@@ -2100,7 +2102,7 @@ section:not(.hero) {
 .slogan-text {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background: linear-gradient(135deg, rgba(0, 51, 102, 0.1) 0%, rgba(0, 51, 102, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(10, 36, 99, 0.1) 0%, rgba(10, 36, 99, 0.05) 100%);
     border-left: 3px solid var(--primary);
     color: var(--primary);
     font-weight: 700;
@@ -2122,7 +2124,7 @@ section:not(.hero) {
     position: absolute;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(0, 51, 102, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(10, 36, 99, 0.15) 0%, transparent 70%);
     border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
     animation: blobMorph 20s ease-in-out infinite, blobFloat 15s ease-in-out infinite;
     z-index: 0;
@@ -2261,7 +2263,7 @@ section:not(.hero) {
     position: absolute;
     width: 4px;
     height: 4px;
-    background: rgba(0, 51, 102, 0.6);
+    background: rgba(10, 36, 99, 0.6);
     border-radius: 50%;
     animation: particleFloat 15s infinite;
     opacity: 0;
@@ -2303,7 +2305,7 @@ section:not(.hero) {
     inset: 0;
     background: linear-gradient(
         135deg,
-        rgba(0, 51, 102, 0.1) 0%,
+        rgba(10, 36, 99, 0.1) 0%,
         rgba(245, 158, 11, 0.05) 100%
     );
     transform: translateZ(-30px);
@@ -2416,18 +2418,18 @@ section:not(.hero) {
 @keyframes neonPulse {
     0%, 100% {
         text-shadow: 
-            0 0 10px rgba(0, 51, 102, 0.5),
-            0 0 20px rgba(0, 51, 102, 0.4),
-            0 0 30px rgba(0, 51, 102, 0.3),
-            0 0 40px rgba(0, 51, 102, 0.2);
+            0 0 10px rgba(10, 36, 99, 0.5),
+            0 0 20px rgba(10, 36, 99, 0.4),
+            0 0 30px rgba(10, 36, 99, 0.3),
+            0 0 40px rgba(10, 36, 99, 0.2);
     }
     50% {
         text-shadow: 
-            0 0 20px rgba(0, 51, 102, 0.8),
-            0 0 30px rgba(0, 51, 102, 0.6),
-            0 0 40px rgba(0, 51, 102, 0.4),
-            0 0 50px rgba(0, 51, 102, 0.3),
-            0 0 60px rgba(0, 51, 102, 0.2);
+            0 0 20px rgba(10, 36, 99, 0.8),
+            0 0 30px rgba(10, 36, 99, 0.6),
+            0 0 40px rgba(10, 36, 99, 0.4),
+            0 0 50px rgba(10, 36, 99, 0.3),
+            0 0 60px rgba(10, 36, 99, 0.2);
     }
 }
 
@@ -2464,7 +2466,7 @@ section:not(.hero) {
 .loading-spinner {
     width: 60px;
     height: 60px;
-    border: 4px solid rgba(0, 51, 102, 0.2);
+    border: 4px solid rgba(10, 36, 99, 0.2);
     border-top-color: var(--primary);
     border-radius: 50%;
     animation: spinLoader 1s linear infinite;
