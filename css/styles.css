@@ -574,18 +574,9 @@ section:not(.hero) {
     pointer-events: none;
 }
 
-/* Subtle Fire & Water Glow - NO BLOCKING */
+/* Subtle Fire & Water Glow - DISABLED to show background image */
 .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(ellipse at 80% 20%, rgba(211, 47, 47, 0.08) 0%, transparent 50%),
-        radial-gradient(ellipse at 20% 80%, rgba(21, 101, 192, 0.10) 0%, transparent 50%);
-    z-index: 0;
-    pointer-events: none;
+    display: none !important;
 }
 
 /* Animated Gradient Mesh - DISABLED to show background image */
