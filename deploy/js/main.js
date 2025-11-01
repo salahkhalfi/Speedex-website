@@ -24,7 +24,7 @@
                 const target = document.querySelector(href);
                 if (target) {
                     e.preventDefault();
-                    const headerOffset = 200;
+                    const headerOffset = 120;
                     const elementPosition = target.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -100,7 +100,7 @@
 
             sections.forEach(section => {
                 const sectionHeight = section.offsetHeight;
-                const sectionTop = section.offsetTop - 200;
+                const sectionTop = section.offsetTop - 120;
                 const sectionId = section.getAttribute('id');
                 const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
 
