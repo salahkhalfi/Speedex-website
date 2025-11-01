@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Check - Speedex</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css?v=5.3&t=1761991459632815224">
+    <style>
+        body {
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .test-section {
+            margin: 40px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .color-sample {
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Diagnostic Visuel Speedex v5.3</h1>
+    
+    <!-- Test 1: Hero Background -->
+    <div class="test-section">
+        <h2>1. Hero Background (Gradient Bleu → Rouge)</h2>
+        <div style="height: 200px; background: linear-gradient(135deg, #0D47A1 0%, #1565C0 40%, #1976D2 70%, #C62828 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+            <div style="text-align: center;">
+                <h1 style="color: #FFFFFF; text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);">Texte Hero</h1>
+                <p style="color: #FFFFFF; text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);">Sous-titre hero</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Test 2: Service Icons Normal -->
+    <div class="test-section">
+        <h2>2. Icônes Service Cards Normales (Gradient Bleu)</h2>
+        <div class="test-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-fire-extinguisher"></i>
+                </div>
+                <h3>Extincteurs</h3>
+                <p>Icône devrait être blanche sur gradient bleu</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Système Automatique</h3>
+                <p>Icône devrait être blanche sur gradient bleu</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Test 3: Service Icons Featured -->
+    <div class="test-section">
+        <h2>3. Icônes Service Cards Featured (Gradient Rouge → Bleu)</h2>
+        <div class="test-grid">
+            <div class="service-card featured">
+                <div class="featured-badge">
+                    <i class="fas fa-star"></i> Populaire
+                </div>
+                <div class="service-icon">
+                    <i class="fas fa-fire-extinguisher"></i>
+                </div>
+                <h3>Extincteurs Featured</h3>
+                <p>Tout devrait être blanc sur gradient rouge-bleu</p>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Test 1</li>
+                    <li><i class="fas fa-check"></i> Test 2</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Test 4: Color Contrast -->
+    <div class="test-section">
+        <h2>4. Test de Contraste des Couleurs</h2>
+        <div class="test-grid">
+            <div class="color-sample" style="background: #1565C0; color: #FFFFFF;">
+                Blanc sur Bleu Principal<br>#FFFFFF sur #1565C0
+            </div>
+            <div class="color-sample" style="background: #0D47A1; color: #FFFFFF;">
+                Blanc sur Bleu Foncé<br>#FFFFFF sur #0D47A1
+            </div>
+            <div class="color-sample" style="background: #D32F2F; color: #FFFFFF;">
+                Blanc sur Rouge<br>#FFFFFF sur #D32F2F
+            </div>
+            <div class="color-sample" style="background: #C62828; color: #FFFFFF;">
+                Blanc sur Rouge Foncé<br>#FFFFFF sur #C62828
+            </div>
+            <div class="color-sample" style="background: linear-gradient(135deg, #D32F2F 0%, #1565C0 100%); color: #FFFFFF;">
+                Blanc sur Gradient Rouge-Bleu<br>Featured Card Background
+            </div>
+            <div class="color-sample" style="background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%); color: #FFFFFF;">
+                Blanc sur Gradient Bleu<br>--gradient-accent
+            </div>
+        </div>
+    </div>
+    
+    <!-- Test 5: Hero Elements -->
+    <div class="test-section">
+        <h2>5. Hero Elements</h2>
+        <div style="background: linear-gradient(135deg, #0D47A1 0%, #1565C0 40%, #1976D2 70%, #C62828 100%); padding: 40px; border-radius: 8px;">
+            <div class="hero-badge">
+                <i class="fas fa-shield-alt"></i>
+                Exigez la sécurité Speedex!
+            </div>
+            <h1 class="hero-title">Protection Incendie Expert</h1>
+            <p class="hero-subtitle">Vente, installation et entretien d'extincteurs</p>
+            <div class="hero-slogan">
+                <i class="fas fa-quote-left"></i>
+                <span>Votre sécurité, notre priorité absolue</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Test 6: Buttons -->
+    <div class="test-section">
+        <h2>6. Boutons Hero</h2>
+        <div style="background: linear-gradient(135deg, #0D47A1 0%, #1565C0 40%, #1976D2 70%, #C62828 100%); padding: 40px; border-radius: 8px; text-align: center;">
+            <div class="hero-cta-new">
+                <a href="#contact" class="hero-btn-contact">
+                    📧 Nous Contacter
+                </a>
+                <a href="tel:+15146061100" class="hero-btn-phone">
+                    📞 (514) 606-1100
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div style="margin: 40px 0; padding: 20px; background: #e3f2fd; border-left: 4px solid #1565C0;">
+        <h3>✅ Points à Vérifier:</h3>
+        <ul>
+            <li>✓ Texte blanc visible sur fond gradient bleu-rouge?</li>
+            <li>✓ Icônes blanches visibles sur fond gradient bleu?</li>
+            <li>✓ Icônes featured blanches visibles sur fond gradient rouge-bleu?</li>
+            <li>✓ Hero badge texte visible?</li>
+            <li>✓ Hero slogan visible?</li>
+            <li>✓ Boutons cliquables et visibles?</li>
+            <li>✓ Aucun élément blanc sur fond blanc?</li>
+        </ul>
+    </div>
+</body>
+</html>

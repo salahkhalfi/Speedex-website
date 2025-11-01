@@ -972,13 +972,25 @@ section:not(.hero) {
     transform: translate(-50%, -50%) scale(1.2);
 }
 
-/* Enhanced text contrast on hover */
+/* Enhanced text contrast on hover - Force darker colors */
 .service-card:hover h3 {
-    color: var(--primary-dark);
+    color: #0a0f1f !important;
+    font-weight: 800;
 }
 
 .service-card:hover p {
-    color: var(--text-primary);
+    color: #1a202c !important;
+    font-weight: 600;
+}
+
+.service-card:hover .service-features li {
+    color: #1a202c !important;
+    font-weight: 500;
+}
+
+.service-card:hover .service-link {
+    color: #0D47A1 !important;
+    font-weight: 700;
 }
 
 /* Premium Featured Card */
@@ -1000,11 +1012,36 @@ section:not(.hero) {
 
 .service-card.featured:hover {
     transform: scale(1.08) translateY(-12px);
-    background: linear-gradient(135deg, #E53935 0%, #1E88E5 100%);
+    background: linear-gradient(135deg, #C62828 0%, #0D47A1 100%);
     box-shadow: 
-        0 32px 64px rgba(229, 57, 53, 0.5),
-        0 0 60px rgba(30, 136, 229, 0.4),
+        0 32px 64px rgba(198, 40, 40, 0.6),
+        0 0 60px rgba(13, 71, 161, 0.5),
         inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Renforce contraste texte featured hover */
+.service-card.featured:hover h3 {
+    color: #FFFFFF !important;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
+    font-weight: 800;
+}
+
+.service-card.featured:hover p {
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+    font-weight: 600;
+}
+
+.service-card.featured:hover .service-features li {
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+}
+
+.service-card.featured:hover .service-link {
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+    font-weight: 800;
 }
 
 /* Text visibility handled in specific h3 and p sections below */
@@ -1056,9 +1093,14 @@ section:not(.hero) {
 
 .service-card:hover .service-icon {
     transform: scale(1.1) rotate(5deg);
+    background: linear-gradient(135deg, #0D47A1 0%, #1565C0 100%);
     box-shadow: 
-        0 16px 32px rgba(21, 101, 192, 0.4),
-        var(--glow-primary);
+        0 16px 32px rgba(13, 71, 161, 0.5),
+        0 0 40px rgba(21, 101, 192, 0.6);\n}
+
+.service-card:hover .service-icon i {
+    color: #FFFFFF !important;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
 }
 
 .service-card:hover .service-icon::before {
@@ -1091,6 +1133,15 @@ section:not(.hero) {
 
 .service-card.featured:hover .service-icon {
     transform: scale(1.15) rotate(-5deg);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.25) 100%);
+    box-shadow: 
+        0 16px 32px rgba(0, 0, 0, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.5);
+}
+
+.service-card.featured:hover .service-icon i {
+    color: #FFFFFF !important;
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.8));
 }
 
 .service-card h3 {
