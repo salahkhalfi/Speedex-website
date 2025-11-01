@@ -419,6 +419,221 @@
     };
 
     // ========================================
+    // ULTRA PREMIUM FEATURES
+    // ========================================
+    
+    // Custom Cursor
+    const initCustomCursor = () => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (window.innerWidth < 768) return; // Disable on mobile
+        
+        const cursor = document.createElement('div');
+        cursor.className = 'custom-cursor';
+        const follower = document.createElement('div');
+        follower.className = 'custom-cursor-follower';
+        
+        document.body.appendChild(cursor);
+        document.body.appendChild(follower);
+        
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        let followerX = 0, followerY = 0;
+        
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+        
+        // Smooth cursor movement
+        function animateCursor() {
+            cursorX += (mouseX - cursorX) * 0.3;
+            cursorY += (mouseY - cursorY) * 0.3;
+            followerX += (mouseX - followerX) * 0.1;
+            followerY += (mouseY - followerY) * 0.1;
+            
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            follower.style.left = followerX + 'px';
+            follower.style.top = followerY + 'px';
+            
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+        
+        // Hover effects
+        const hoverElements = document.querySelectorAll('a, button, .service-card, .btn');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+    };
+    
+    // Particle System
+    const initParticles = () => {
+        const hero = document.querySelector('.hero');
+        if (!hero) return;
+        
+        const container = document.createElement('div');
+        container.className = 'particles-container';
+        hero.insertBefore(container, hero.firstChild);
+        
+        const particleCount = 30;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+            particle.style.setProperty('--tx', (Math.random() * 200 - 100) + 'px');
+            container.appendChild(particle);
+        }
+    };
+    
+    // Advanced Scroll Reveal
+    const initAdvancedScrollReveal = () => {
+        const revealElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        });
+        
+        revealElements.forEach(el => observer.observe(el));
+    };
+    
+    // 3D Card Tilt Effect
+    const init3DCards = () => {
+        const cards = document.querySelectorAll('.service-card');
+        
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                card.style.setProperty('--rotateX', rotateX + 'deg');
+                card.style.setProperty('--rotateY', rotateY + 'deg');
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.setProperty('--rotateX', '0deg');
+                card.style.setProperty('--rotateY', '0deg');
+            });
+        });
+    };
+    
+    // Magnetic Button Effect
+    const initMagneticButtons = () => {
+        const buttons = document.querySelectorAll('.btn-primary, .btn-emergency');
+        
+        buttons.forEach(button => {
+            button.classList.add('btn-magnetic');
+            
+            button.addEventListener('mousemove', (e) => {
+                const rect = button.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                const distance = Math.sqrt(x * x + y * y);
+                const maxDistance = 50;
+                
+                if (distance < maxDistance) {
+                    const strength = (maxDistance - distance) / maxDistance;
+                    const moveX = x * strength * 0.3;
+                    const moveY = y * strength * 0.3;
+                    
+                    button.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
+                }
+            });
+            
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = '';
+            });
+        });
+    };
+    
+    // Parallax Scroll Effect
+    const initParallax = () => {
+        const parallaxElements = document.querySelectorAll('.hero::before, .hero-overlay');
+        
+        const handleScroll = throttle(() => {
+            const scrolled = window.pageYOffset;
+            
+            parallaxElements.forEach((el, index) => {
+                const speed = 0.5 + (index * 0.2);
+                el.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        }, 16); // ~60fps
+        
+        window.addEventListener('scroll', handleScroll);
+    };
+    
+    // Loading Screen
+    const initLoadingScreen = () => {
+        const loadingHTML = `
+            <div class="loading-screen" id="loadingScreen">
+                <div class="loading-logo">
+                    <img src="images/logo.png" alt="Speedex Logo">
+                </div>
+                <div class="loading-spinner"></div>
+                <div class="loading-text">Chargement...</div>
+            </div>
+        `;
+        
+        document.body.insertAdjacentHTML('afterbegin', loadingHTML);
+        
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loadingScreen = document.getElementById('loadingScreen');
+                loadingScreen.classList.add('hidden');
+                
+                setTimeout(() => {
+                    loadingScreen.remove();
+                }, 500);
+            }, 800);
+        });
+    };
+    
+    // Text Reveal Animation
+    const initTextReveal = () => {
+        const titles = document.querySelectorAll('.hero-title, .section-title');
+        
+        titles.forEach(title => {
+            const words = title.textContent.split(' ');
+            title.textContent = '';
+            
+            words.forEach((word, index) => {
+                const span = document.createElement('span');
+                span.className = 'text-reveal';
+                span.innerHTML = `<span class="text-reveal-inner" style="animation-delay: ${index * 0.1}s">${word} </span>`;
+                title.appendChild(span);
+            });
+        });
+    };
+    
+    // Stagger Animation for Service Cards
+    const initStaggerAnimation = () => {
+        const servicesGrid = document.querySelector('.services-grid');
+        if (servicesGrid) {
+            servicesGrid.classList.add('stagger-animation');
+        }
+    };
+
+    // ========================================
     // INITIALIZE ALL FUNCTIONS
     // ========================================
     const init = () => {
@@ -433,9 +648,9 @@
     };
 
     const initializeApp = () => {
-        console.log('🚀 Groupe Sécurité Speedex 007 - Website Initialized');
+        console.log('🚀 Groupe Sécurité Speedex 007 - Ultra Premium Website Initialized');
 
-        // Initialize all features
+        // Core features
         smoothScroll();
         initMobileMenu();
         initHeaderScroll();
@@ -449,12 +664,24 @@
         initEmailTracking();
         initLazyLoading();
         preventResubmission();
+        
+        // Ultra Premium Features
+        initLoadingScreen();
+        initCustomCursor();
+        initParticles();
+        initAdvancedScrollReveal();
+        init3DCards();
+        initMagneticButtons();
+        initParallax();
+        initTextReveal();
+        initStaggerAnimation();
 
         // Add loaded class to body for CSS animations
         document.body.classList.add('loaded');
 
         // Log initialization
         console.log('✅ All features initialized successfully');
+        console.log('✨ Ultra Premium effects active');
     };
 
     // Start the application
