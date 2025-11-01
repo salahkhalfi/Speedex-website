@@ -167,9 +167,9 @@ select {
 }
 
 .section {
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-lg) 0;
     scroll-margin-top: 0;
-    padding-top: 180px !important;
+    padding-top: 120px !important;
 }
 
 section[id] {
@@ -179,7 +179,7 @@ section[id] {
 /* Hero section should start at top (no scroll margin) */
 .hero {
     scroll-margin-top: 0 !important;
-    padding-top: 140px !important;
+    padding-top: 120px !important;
 }
 
 /* Ensure sections are below header - but not hero */
