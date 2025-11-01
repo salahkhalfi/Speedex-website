@@ -19,6 +19,7 @@
     --gradient-harmony: linear-gradient(135deg, #D32F2F 0%, #1565C0 100%);
     --gradient-dark: linear-gradient(135deg, #0D47A1 0%, #1A237E 100%);
     --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+    --gradient-accent: linear-gradient(135deg, #1565C0 0%, #1976D2 100%);
     
     /* Secondary Colors - Fire Safety Red */
     --secondary: #D32F2F;
