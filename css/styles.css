@@ -177,7 +177,7 @@ section[id] {
 /* Hero section should start at top (no scroll margin) */
 .hero {
     scroll-margin-top: 0 !important;
-    padding-top: 80px !important;
+    padding-top: 140px !important;
 }
 
 /* Ensure sections are below header - but not hero */
