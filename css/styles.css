@@ -1,6 +1,7 @@
 /* ========================================
    GROUPE SÉCURITÉ SPEEDEX 007
    Ultra Premium Design System - Fire Safety Excellence
+   Version 6.3 - Hero Background Image Added
    ======================================== */
 
 /* ========================================
@@ -549,7 +550,9 @@ section:not(.hero) {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #0A2463 0%, #071B45 100%);
+    background: 
+        linear-gradient(135deg, rgba(10, 36, 99, 0.90) 0%, rgba(7, 27, 69, 0.95) 100%),
+        url('../images/hero-bg.jpg') center/cover no-repeat;
     overflow: hidden;
     padding-top: 80px;
     padding-bottom: 60px;
