@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FINAL IMAGE TEST</title>
+    <style>
+        body { margin: 0; padding: 20px; background: #000; color: white; }
+        h1 { color: red; font-size: 3rem; }
+        .box {
+            width: 100%;
+            height: 600px;
+            margin: 20px 0;
+            border: 5px solid yellow;
+        }
+        #test1 {
+            background-image: url('/images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        #test2 {
+            background-image: 
+                linear-gradient(135deg, rgba(10, 36, 99, 0.50) 0%, rgba(7, 27, 69, 0.60) 100%),
+                url('/images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔥 FINAL IMAGE TEST - DO YOU SEE THE FIRE IMAGE? 🔥</h1>
+    
+    <h2>Test 1: PURE IMAGE (no overlay - yellow border)</h2>
+    <div id="test1" class="box"></div>
+    
+    <h2>Test 2: IMAGE WITH BLUE OVERLAY (like hero section - yellow border)</h2>
+    <div id="test2" class="box"></div>
+    
+    <h2>Test 3: Direct IMG tag</h2>
+    <img src="/images/hero-bg.jpg" style="max-width: 100%; border: 5px solid yellow;">
+    
+    <h2 style="color: lime;">✅ If you see fire/wood burning images above, it's WORKING!</h2>
+    <h2 style="color: red;">❌ If you see only colored boxes with NO fire, there's still a problem!</h2>
+</body>
+</html>
