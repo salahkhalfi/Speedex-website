@@ -957,11 +957,11 @@ section:not(.hero) {
 
 .service-card:hover {
     transform: translateY(-8px) scale(1.02);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.98) 100%);
+    background: linear-gradient(135deg, #1565C0 0%, #0D47A1 100%);
     box-shadow: 
-        0 24px 48px rgba(21, 101, 192, 0.18),
-        0 0 0 2px rgba(21, 101, 192, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 1);
+        0 24px 48px rgba(21, 101, 192, 0.5),
+        0 0 40px rgba(21, 101, 192, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .service-card:hover::before {
@@ -972,26 +972,34 @@ section:not(.hero) {
     transform: translate(-50%, -50%) scale(1.2);
 }
 
-/* Enhanced text contrast on hover - Lighter colors for better visibility */
+/* Texte blanc bold au hover - Transformation en featured style */
 .service-card:hover h3 {
-    color: #1565C0 !important;
+    color: #FFFFFF !important;
     font-weight: 700;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 .service-card:hover p {
-    color: #4a5568 !important;
+    color: #FFFFFF !important;
     font-weight: 500;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .service-card:hover .service-features li {
-    color: #4a5568 !important;
-    font-weight: 400;
+    color: #FFFFFF !important;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.service-card:hover .service-features i {
+    color: #FFFFFF !important;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
 }
 
 .service-card:hover .service-link {
-    color: #1565C0 !important;
+    color: #FFFFFF !important;
     font-weight: 700;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* Premium Featured Card */
