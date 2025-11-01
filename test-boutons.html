@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST ABSOLU DES BOUTONS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            background: #f0f0f0;
+        }
+        .test-box {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #c91818;
+            margin-bottom: 30px;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        a.btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        a.btn-primary {
+            background: linear-gradient(135deg, #c91818, #8b0000);
+            color: white;
+        }
+        a.btn-primary:hover {
+            background: linear-gradient(135deg, #d91d1d, #9a0000);
+            transform: translateY(-2px);
+        }
+        a.btn-outline {
+            background: white;
+            color: #c91818;
+            border: 2px solid #c91818;
+        }
+        a.btn-outline:hover {
+            background: #c91818;
+            color: white;
+        }
+        .info {
+            margin-top: 40px;
+            padding: 20px;
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            border-radius: 4px;
+        }
+        .code {
+            background: #1a202c;
+            color: #10b981;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .success {
+            color: #10b981;
+            font-weight: bold;
+        }
+        .error {
+            color: #ef4444;
+            font-weight: bold;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="test-box">
+        <h1>🔴 TEST ABSOLU DES LIENS</h1>
+        
+        <p style="font-size: 18px; line-height: 1.8; margin-bottom: 30px;">
+            Cette page contient les boutons avec les liens <strong>CODÉS EN DUR</strong> dans le HTML.
+            Si ces boutons ne fonctionnent pas, il y a un problème avec votre navigateur ou environnement.
+        </p>
+        
+        <div class="buttons">
+            <a href="mailto:info@extincteurspeedex.ca?subject=Demande%20de%20soumission&body=Bonjour,%0D%0A%0D%0AJe%20souhaite%20obtenir%20une%20soumission%20pour%20:%0D%0A%0D%0ANom%20:%20%0D%0AEntreprise%20:%20%0D%0ATéléphone%20:%20%0D%0AType%20de%20service%20:%20%0D%0A%0D%0AMerci!" 
+               class="btn btn-primary"
+               onclick="alert('✓ Lien email cliqué ! Votre client email devrait s\'ouvrir.'); return true;">
+                <i class="fas fa-envelope"></i> Demander une soumission
+            </a>
+            
+            <a href="tel:+15146061100" 
+               class="btn btn-outline"
+               onclick="alert('✓ Lien téléphone cliqué ! Votre application téléphone devrait s\'ouvrir.'); return true;">
+                <i class="fas fa-phone-alt"></i> Appel d'urgence
+            </a>
+        </div>
+        
+        <div class="info">
+            <h3 style="margin-top: 0;">✅ Ce qui DOIT se passer :</h3>
+            <ol style="line-height: 2;">
+                <li><strong>En survolant</strong> les boutons → Le curseur devient une main 👆</li>
+                <li><strong>En cliquant "Demander une soumission"</strong> → Une alerte apparaît, puis votre client email s'ouvre</li>
+                <li><strong>En cliquant "Appel d'urgence"</strong> → Une alerte apparaît, puis votre application téléphone s'ouvre</li>
+            </ol>
+        </div>
+        
+        <div style="margin-top: 30px; padding: 20px; background: #e6fffa; border-radius: 6px;">
+            <h3>📋 Code HTML Source :</h3>
+            <div class="code">
+&lt;a href="<span class="success">mailto:info@extincteurspeedex.ca?subject=...</span>"&gt;<br>
+&nbsp;&nbsp;Demander une soumission<br>
+&lt;/a&gt;<br>
+<br>
+&lt;a href="<span class="success">tel:+15146061100</span>"&gt;<br>
+&nbsp;&nbsp;Appel d'urgence<br>
+&lt;/a&gt;
+            </div>
+        </div>
+        
+        <div style="margin-top: 40px; padding: 25px; background: #fef2f2; border: 2px solid #ef4444; border-radius: 8px;">
+            <h3 style="color: #ef4444; margin-top: 0;">🚨 SI LES BOUTONS ICI NE FONCTIONNENT PAS :</h3>
+            <p style="font-size: 16px; line-height: 1.8;">
+                Le problème n'est <strong>PAS</strong> dans mon code. Vérifiez :
+            </p>
+            <ul style="line-height: 2;">
+                <li>Votre navigateur bloque-t-il les liens mailto: ou tel: ?</li>
+                <li>Avez-vous un client email configuré ?</li>
+                <li>Utilisez-vous un bloqueur de scripts ou extensions de sécurité ?</li>
+                <li>Êtes-vous sur mobile ou ordinateur ?</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <p style="font-size: 14px; color: #666;">
+                Page générée le : <strong id="timestamp"></strong>
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toLocaleString('fr-CA');
+        
+        // Test au chargement
+        window.addEventListener('load', function() {
+            console.log('✓ Page de test chargée');
+            console.log('✓ Vérifier que les liens <a> ont les attributs href corrects');
+            
+            const links = document.querySelectorAll('a.btn');
+            links.forEach((link, index) => {
+                console.log(`Bouton ${index + 1}: href="${link.getAttribute('href')}"`);
+            });
+        });
+    </script>
+</body>
+</html>
