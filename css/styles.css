@@ -166,11 +166,25 @@ select {
 
 .section {
     padding: var(--spacing-xl) 0;
-    scroll-margin-top: 150px;
+    scroll-margin-top: 200px;
 }
 
 section[id] {
-    scroll-margin-top: 150px;
+    scroll-margin-top: 200px;
+}
+
+/* Ensure sections are below header */
+section {
+    position: relative;
+}
+
+section::before {
+    content: '';
+    display: block;
+    height: 100px;
+    margin-top: -100px;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 .section-header {
