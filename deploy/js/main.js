@@ -422,50 +422,10 @@
     // ULTRA PREMIUM FEATURES
     // ========================================
     
-    // Custom Cursor
+    // Custom Cursor - DISABLED per user request
     const initCustomCursor = () => {
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        if (window.innerWidth < 768) return; // Disable on mobile
-        
-        const cursor = document.createElement('div');
-        cursor.className = 'custom-cursor';
-        const follower = document.createElement('div');
-        follower.className = 'custom-cursor-follower';
-        
-        document.body.appendChild(cursor);
-        document.body.appendChild(follower);
-        
-        let mouseX = 0, mouseY = 0;
-        let cursorX = 0, cursorY = 0;
-        let followerX = 0, followerY = 0;
-        
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-        
-        // Smooth cursor movement
-        function animateCursor() {
-            cursorX += (mouseX - cursorX) * 0.3;
-            cursorY += (mouseY - cursorY) * 0.3;
-            followerX += (mouseX - followerX) * 0.1;
-            followerY += (mouseY - followerY) * 0.1;
-            
-            cursor.style.left = cursorX + 'px';
-            cursor.style.top = cursorY + 'px';
-            follower.style.left = followerX + 'px';
-            follower.style.top = followerY + 'px';
-            
-            requestAnimationFrame(animateCursor);
-        }
-        animateCursor();
-        
-        // Hover effects
-        const hoverElements = document.querySelectorAll('a, button, .service-card, .btn');
-        hoverElements.forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-        });
+        // Custom cursor feature removed as it was disturbing the browsing experience
+        return;
     };
     
     // Particle System
