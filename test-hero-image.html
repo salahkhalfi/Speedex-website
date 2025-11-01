@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Hero Image</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        .test-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .test-section {
+            border: 2px solid #333;
+            padding: 1rem;
+        }
+        
+        h2 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        /* Test 1: Image seule */
+        .test-image-only {
+            width: 100%;
+            height: 400px;
+            background-image: url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        /* Test 2: Image avec overlay léger */
+        .test-image-light-overlay {
+            width: 100%;
+            height: 400px;
+            background-image: 
+                linear-gradient(135deg, rgba(10, 36, 99, 0.30) 0%, rgba(7, 27, 69, 0.40) 100%),
+                url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        /* Test 3: Image avec overlay moyen (comme hero actuel) */
+        .test-image-medium-overlay {
+            width: 100%;
+            height: 400px;
+            background-image: 
+                linear-gradient(135deg, rgba(10, 36, 99, 0.50) 0%, rgba(7, 27, 69, 0.60) 100%),
+                url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .test-text {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+            text-align: center;
+        }
+        
+        /* Test 4: Image directe */
+        .test-image-direct {
+            width: 100%;
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Test de l'image Hero Background</h1>
+        
+        <div class="test-section">
+            <h2>Test 1: Image seule (sans overlay)</h2>
+            <div class="test-image-only"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Test 2: Image avec overlay léger (30-40%)</h2>
+            <div class="test-image-light-overlay"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Test 3: Image avec overlay moyen (50-60%) - Configuration actuelle du hero</h2>
+            <div class="test-image-medium-overlay">
+                <div class="test-text">EXTINCTEURS SPEEDEX 007</div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Test 4: Image directe (balise img)</h2>
+            <img src="images/hero-bg.jpg" alt="Hero Background" class="test-image-direct">
+        </div>
+        
+        <div class="test-section">
+            <h2>Info Image</h2>
+            <p><strong>Chemin:</strong> images/hero-bg.jpg</p>
+            <p><strong>URL complète:</strong> <a href="images/hero-bg.jpg" target="_blank">Ouvrir l'image</a></p>
+        </div>
+    </div>
+</body>
+</html>
