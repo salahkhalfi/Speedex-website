@@ -21,7 +21,7 @@ speedex/
 │   ├── js/
 │   └── images/
 │
-├── github/                 # 🐙 GITHUB PAGES (auto-généré, commité)
+├── docs/                 # 🐙 GITHUB PAGES (auto-généré, commité)
 │   ├── index.html          #    URLs: https://salahkhalfi.github.io/Speedex-website
 │   ├── index-en.html
 │   ├── css/
@@ -65,7 +65,7 @@ vim css/styles.css    # Styles
 
 **Résultat :**
 - ✅ `dist/` créé avec URLs Cloudflare
-- ✅ `github/` créé avec URLs GitHub Pages
+- ✅ `docs/` créé avec URLs GitHub Pages
 
 ### **3. Déployer**
 
@@ -76,7 +76,7 @@ npx wrangler pages deploy dist --project-name speedex
 
 #### **GitHub Pages**
 ```bash
-git add github/
+git add docs/
 git commit -m "Update: GitHub Pages deployment"
 git push origin main
 ```
@@ -87,11 +87,11 @@ git push origin main
 
 Le script `build-deploy.sh` effectue ces opérations :
 
-1. **Nettoyage** : Supprime `dist/` et `github/`
+1. **Nettoyage** : Supprime `dist/` et `docs/`
 2. **Copie** : Duplique les sources dans chaque dossier
 3. **Remplacement** : Change les URLs avec `sed`
    - `dist/` → URLs `extincteurspeedex.ca`
-   - `github/` → URLs `salahkhalfi.github.io/Speedex-website`
+   - `docs/` → URLs `salahkhalfi.github.io/Speedex-website`
 
 ### **URLs Modifiées**
 
@@ -123,7 +123,7 @@ cd dist && python3 -m http.server 8000
 npx wrangler pages deploy dist --project-name speedex
 
 # 5. Déployer GitHub
-git add github/
+git add docs/
 git commit -m "Update: Nouveau contenu"
 git push origin main
 ```
@@ -135,11 +135,11 @@ git push origin main
 ### **✅ À FAIRE**
 - ✅ Toujours éditer les **sources** (racine du projet)
 - ✅ Lancer `./build-deploy.sh` après chaque modification
-- ✅ Commiter `github/` dans Git
+- ✅ Commiter `docs/` dans Git
 - ✅ Vérifier les deux versions après déploiement
 
 ### **❌ À NE PAS FAIRE**
-- ❌ Éditer directement `dist/` ou `github/` (écrasé au prochain build)
+- ❌ Éditer directement `dist/` ou `docs/` (écrasé au prochain build)
 - ❌ Commiter `dist/` dans Git (généré localement pour Cloudflare)
 - ❌ Mélanger les URLs des deux plateformes
 
@@ -153,9 +153,9 @@ grep "canonical" dist/index.html
 # Attendu: https://extincteurspeedex.ca/
 ```
 
-### **GitHub Pages (github/)**
+### **GitHub Pages (docs/)**
 ```bash
-grep "canonical" github/index.html
+grep "canonical" docs/index.html
 # Attendu: https://salahkhalfi.github.io/Speedex-website/
 ```
 
@@ -175,7 +175,7 @@ grep "canonical" github/index.html
 | Version | Balise Finale |
 |---------|--------------|
 | `dist/index.html` | `<link rel="canonical" href="https://extincteurspeedex.ca/">` |
-| `github/index.html` | `<link rel="canonical" href="https://salahkhalfi.github.io/Speedex-website/">` |
+| `docs/index.html` | `<link rel="canonical" href="https://salahkhalfi.github.io/Speedex-website/">` |
 
 ---
 
@@ -187,11 +187,11 @@ grep "canonical" github/index.html
 ./build-deploy.sh
 
 # Vérifier manuellement
-grep -r "extincteurspeedex.ca" github/
+grep -r "extincteurspeedex.ca" docs/
 # Ne devrait retourner que les emails (normal)
 ```
 
-### **Problème : dist/ ou github/ manquants**
+### **Problème : dist/ ou docs/ manquants**
 ```bash
 # Relancer le build
 rm -rf dist github
