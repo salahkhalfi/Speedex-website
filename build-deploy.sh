@@ -16,7 +16,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
 # Base URLs for different platforms
-CLOUDFLARE_URL="https://extincteurspeedex.ca"
+CLOUDFLARE_URL="https://speedex.pages.dev"
 GITHUB_URL="https://salahkhalfi.github.io/Speedex-website"
 
 # Directories
