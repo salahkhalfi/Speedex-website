@@ -1658,42 +1658,61 @@ section:not(.hero) {
 }
 
 @media (max-width: 480px) {
-    .contact-form-container {
-        margin-top: 10px !important;
-        padding: 0 !important;
+    /* MASQUER le header de la section Contact sur mobile */
+    .contact.section > .container > .section-header {
+        display: none !important;
     }
     
+    /* MASQUER les cartes d'information sur mobile */
+    .contact-grid {
+        display: none !important;
+    }
+    
+    /* Réduire l'espace de la section contact */
+    .contact.section {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+    
+    /* Optimiser le conteneur du formulaire */
+    .contact-form-container {
+        margin-top: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+    
+    /* Minimiser le header du formulaire */
     .contact-form-container .section-header {
-        margin-bottom: 15px !important;
-        padding: 0 1rem !important;
+        margin-bottom: 10px !important;
+        padding: 0 0.75rem !important;
     }
     
     .contact-form-container .section-tag {
-        font-size: 0.7rem !important;
-        padding: 0.25rem 0.5rem !important;
-        margin-bottom: 0.5rem !important;
+        font-size: 0.65rem !important;
+        padding: 0.2rem 0.4rem !important;
+        margin-bottom: 0.3rem !important;
     }
     
     .contact-form-container .section-title {
-        font-size: 1.25rem !important;
-        margin-bottom: 0.25rem !important;
+        font-size: 1.1rem !important;
+        margin-bottom: 0.2rem !important;
         line-height: 1.3 !important;
     }
     
     .contact-form-container .section-description {
-        font-size: 0.8rem !important;
+        font-size: 0.75rem !important;
         margin-bottom: 0 !important;
-        line-height: 1.4 !important;
+        line-height: 1.3 !important;
     }
     
+    /* Maximiser l'iframe */
     .contact-form-container > div {
-        height: 850px !important;
+        height: calc(100vh - 120px) !important;
+        max-height: 900px !important;
         margin-top: 0 !important;
-    }
-    
-    /* Réduire aussi l'espace avant la section contact sur mobile */
-    .contact.section {
-        padding-top: 2rem !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
     }
 }
 
