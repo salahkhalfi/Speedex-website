@@ -1642,6 +1642,14 @@ section:not(.hero) {
 }
 
 @media (max-width: 768px) {
+    .contact-form-container {
+        margin-top: 30px !important;
+    }
+    
+    .contact-form-container .section-header {
+        margin-bottom: 30px !important;
+    }
+    
     .contact-form-container > div {
         height: 700px !important;
         max-width: 100% !important;
@@ -1651,7 +1659,26 @@ section:not(.hero) {
 
 @media (max-width: 480px) {
     .contact-form-container {
-        margin-top: 40px !important;
+        margin-top: 20px !important;
+        padding: 0 !important;
+    }
+    
+    .contact-form-container .section-header {
+        margin-bottom: 20px !important;
+        padding: 0 1rem !important;
+    }
+    
+    .contact-form-container .section-tag {
+        font-size: 0.75rem !important;
+    }
+    
+    .contact-form-container .section-title {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .contact-form-container .section-description {
+        font-size: 0.875rem !important;
     }
     
     .contact-form-container > div {
