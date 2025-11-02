@@ -1636,6 +1636,29 @@ section:not(.hero) {
     display: block;
 }
 
+/* Contact Form Iframe Styles */
+.contact-form-container iframe {
+    border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .contact-form-container > div {
+        height: 700px !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form-container {
+        margin-top: 40px !important;
+    }
+    
+    .contact-form-container > div {
+        height: 800px !important;
+    }
+}
+
 /* ========================================
    FOOTER
    ======================================== */
