@@ -9,7 +9,7 @@ pids
 
 # Compiled binary addons
 build
-dist/
+# dist/ - Commented out for GitHub Pages deployment
 
 # dotenv environment variables file
 .env
