@@ -12,7 +12,7 @@ build
 dist/
 
 # GitHub Pages deployment folder (NOT ignored - committed to repo)
-# github/
+# docs/
 
 # dotenv environment variables file
 .env

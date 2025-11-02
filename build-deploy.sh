@@ -22,7 +22,7 @@ GITHUB_URL="https://salahkhalfi.github.io/Speedex-website"
 # Directories
 SOURCE_DIR="."
 DIST_DIR="dist"
-GITHUB_DIR="github"
+GITHUB_DIR="docs"
 
 # ========================================
 # FUNCTION: Build for Platform
@@ -81,10 +81,10 @@ echo ""
 echo -e "${GREEN}✅ Build Summary:${NC}"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo -e "📁 ${BLUE}dist/${NC}   → Cloudflare Pages (${CLOUDFLARE_URL})"
-echo -e "📁 ${BLUE}github/${NC} → GitHub Pages (${GITHUB_URL})"
+echo -e "📁 ${BLUE}docs/${NC} → GitHub Pages (${GITHUB_URL})"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
 echo -e "${YELLOW}Next Steps:${NC}"
 echo "  1. Deploy to Cloudflare: npx wrangler pages deploy dist --project-name speedex"
-echo "  2. Deploy to GitHub: git add github/ && git commit -m 'Update GitHub Pages' && git push"
+echo "  2. Deploy to GitHub: git add docs/ && git commit -m 'Update GitHub Pages' && git push"
 echo ""
